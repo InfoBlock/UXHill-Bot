@@ -8,3 +8,9 @@ Open bot.js and provide an ID in the following lines
 [28 & 44] let guild = client.guilds.cache.get('Your Guild ID');
 [28 & 45] let logs = guild.channels.cache.get('Your Logs Channel');
 ```
+
+When you have done everything open up cmd in the Bots Directory and type `npm install`
+After everything is installed you can just type `npm start`
+
+The Bot should be up and running!
+If you encounter any bugs or you're having issues feel free to report it.
