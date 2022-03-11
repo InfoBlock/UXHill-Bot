@@ -25,8 +25,8 @@ client.on("ready", () => {
 });
 
 client.on('messageUpdate', function(oldMessage, newMessage) {
-  let guild = client.guilds.cache.get('937136649022877696');
-  let logs = guild.channels.cache.get('946552919287820368');
+  let guild = client.guilds.cache.get('Your Guild ID');
+  let logs = guild.channels.cache.get('Your Logs Channel');
 
   if (oldMessage.author.bot) return;
 
@@ -41,8 +41,8 @@ client.on('messageUpdate', function(oldMessage, newMessage) {
 });
 
 client.on('messageDelete', async (message) => {
-  let guild = client.guilds.cache.get('937136649022877696');
-  let logs = guild.channels.cache.get('946552919287820368');
+  let guild = client.guilds.cache.get('Your Guild ID');
+  let logs = guild.channels.cache.get('Your Logs Channel');
 
   if (message.channel.id === logs.id) return;
   if (message.author.bot) return;
