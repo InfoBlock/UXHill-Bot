@@ -226,52 +226,6 @@ client.on("message", async (message) => {
     }
 
     /*
-    -- Bot Developer Only Commands --
-    */
-
-    if (command === "eval") {
-      if (message.author.id !== devID) return;
-
-      const clean = async (text) => {
-        if (text && text.constructor.name == "Promise")
-        text = await text;
-
-        if (typeof text !== "string")
-        text = require("util").inspect(text, { depth: 1 });
-
-        text = text
-        .replace(/`/g, "`" + String.fromCharCode(8203))
-        .replace(/@/g, "@" + String.fromCharCode(8203));
-
-        return text;
-      }
-
-      try {
-        const toEval = args.join(' ');
-        const evaled = eval(toEval);
-
-        const cleaned = await clean(evaled);
-
-        const evalEmbed = new Discord.MessageEmbed()
-          .setAuthor(`${client.user.username} | Eval`, client.user.displayAvatarURL())
-          .setColor('#38AC45')
-          .addFields(
-            { name: 'Input', value: toEval },
-            { name: 'Output', value: cleaned },
-          )
-          .setFooter('Successfully evaled')
-        message.channel.send(evalEmbed);
-      } catch (err) {
-        const errorEmbed = new Discord.MessageEmbed()
-          .setAuthor(`${client.user.username} | Eval`, client.user.displayAvatarURL())
-          .setColor('#CD393B')
-          .setDescription('I wasn\'t able to eval the provided code!')
-          .setFooter('Eval failed')
-        message.channel.send(errorEmbed)
-      }
-    }
-
-    /*
     -- WIP Commands --
     */
 });
