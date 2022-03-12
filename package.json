@@ -3,7 +3,7 @@
     "discord.js": "^12.2.0",
     "moment": "^2.29.1"
   },
-  "name": "Enter Bot Name",
+  "name": "Enter Bot Name (must be lowerspace, cant have spaces in it)",
   "version": "1.0.0",
   "main": "bot.js",
   "scripts": {
