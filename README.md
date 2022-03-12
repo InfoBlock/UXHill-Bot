@@ -10,7 +10,7 @@ Open bot.js and provide an ID in the following lines
 ```
 Open package.json and give the Bot a name
 ```json
-"name": "Enter Bot Name"
+"name": "Enter Bot Name (must be lowerspace, cant have spaces in it)"
 ```
 
 When you have done everything open up cmd in the Bots Directory and type `npm install`
