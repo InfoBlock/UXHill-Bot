@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const axios = require("axios");
 const moment = require('moment');
-const Akinator = require('discord.js-akinator');
 const client = new Discord.Client({
     intents: [
         Discord.Intents.FLAGS.GUILDS,
@@ -73,7 +72,7 @@ client.on("message", async (message) => {
         .setAuthor(message.guild.name, message.guild.iconURL())
         .setColor("#2C8FB2")
         .setDescription("Here you can see all of the Bots Commands\n\n[] = Required\n<> = Optional")
-        .addField(`Public Commands`, `${prefix}help\n${prefix}userinfo <@User>\n${prefix}updates\n${prefix}akinator | Alias: aki`)
+        .addField(`Public Commands`, `${prefix}help\n${prefix}userinfo <@User>\n${prefix}updates`)
         .addField(`Staff Commands`, `${prefix}say [Message]\n${prefix}dm [User ID] [Message]\n${prefix}clear [1-99]`)
         .addField(`WIP Commands`, `-`)
         .setTimestamp()
@@ -163,17 +162,13 @@ client.on("message", async (message) => {
     if (command === 'updates') {
       const updateEmbed = new Discord.MessageEmbed()
         .setAuthor(client.user.tag, client.user.displayAvatarURL())
-        .addField('Latest Updates', `Akinator has been implemented into the Bot!\n${prefix}akinator / ${prefix}aki`)
-        .addField('Previous Updates', 'Bot now sends you an message when you try to execute an Command via DM')
+        .addField('Latest Updates', `-`)
+        .addField('Previous Updates', '-')
         .setTimestamp()
         .setColor('#2C8FB2')
         .setFooter(message.author.username, message.author.displayAvatarURL())
 
       message.channel.send(updateEmbed);
-    }
-
-    if (command === 'akinator' || command === 'aki') {
-      Akinator(message, client, 'en')
     }
 
     /*
